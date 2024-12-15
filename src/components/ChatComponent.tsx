@@ -17,7 +17,6 @@ function ChatComponent({ chatId }: { chatId: number }) {
     },
   });
   const { messages, input, handleInputChange, handleSubmit } = useChat({
-    api: "/api/chat",
     body: {
       chatId: chatId,
     },
