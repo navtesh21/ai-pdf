@@ -3,7 +3,6 @@ import { messagesTable } from "@/lib/db/schema";
 import { eq } from "drizzle-orm";
 import { NextRequest, NextResponse } from "next/server";
 
-export const runtime = "edge"
 
 export async function POST(req:Request){
     const {chatId} = await req.json()
