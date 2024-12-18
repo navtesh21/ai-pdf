@@ -1,0 +1,9 @@
+{
+    "routes": [
+      {
+        "src": "/api/create-chat",
+        "methods": ["POST", "OPTIONS"],
+        "dest": "/app/api/create-chat/route.ts"
+      }
+    ]
+  }

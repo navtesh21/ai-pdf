@@ -4,11 +4,13 @@ import { chats, messagesTable } from "@/lib/db/schema";
 import { google } from "@ai-sdk/google";
 import { convertToCoreMessages, Message, streamText } from "ai";
 import { eq } from "drizzle-orm";
+import { NextRequest } from "next/server";
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
+export const runtime = "edge"
 
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
   const { messages, chatId } = await req.json();
 
   const _chats = await db.select().from(chats).where(eq(chats.id, chatId));

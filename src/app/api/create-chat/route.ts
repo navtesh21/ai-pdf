@@ -5,7 +5,7 @@ import { getS3Url } from "@/lib/s3";
 import { auth } from "@clerk/nextjs/server";
 import { NextResponse,NextRequest } from "next/server";
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   const{ userId} = await auth()
   if(!userId){
     return NextResponse.json({message:"unauthorized"})
